@@ -1,0 +1,26 @@
+words = ['Ali', 'Shahad', 'Abdulaziz']
+for w in words:
+    print(w, len(w))
+
+print("==========================")
+print("     Another Example      ")
+print("==========================")
+
+
+# Create a sample collection
+users = {'Hans': 'active', 'Éléonore': 'inactive', '景太郎': 'active'}
+
+# Strategy:  Iterate over a copy
+for user, status in users.copy().items():
+    if status == 'inactive':
+        del users[user]
+
+print("users after Strategy 1:", users)
+
+# Strategy:  Create a new collection
+active_users = {}
+for user, status in users.items():
+    if status == 'active':
+        active_users[user] = status
+
+print("active_users after Strategy 2:", active_users)
